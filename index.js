@@ -232,7 +232,7 @@ app.get('/admin/home',(req,res)=>{
     res.render("admin/admin",{user:auser});
 })
 app.get('/admin/manage/student',(req,res)=>{
-    res.render("admin/managestudent",{user:suser});
+    res.render("admin/managestudent",{user:auser});
 })
 app.get('/admin/manage/student/add',(req,res)=>{
     res.render("admin/addstudent",{user:auser});

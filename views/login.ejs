@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Permission</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="/icon.svg"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
 </head>
@@ -20,7 +21,7 @@
             <input type="text" name="user" placeholder="Username" required>
             <div id="image-container">
                 <h3>Select Password Images</h3>   
-                <% for (var i =1; i <=20;  i++ ) { %>
+                <% for (var i =1; i <=25;  i++ ) { %>
                    <img onclick='add("<%= i %>")' nameid="<%= i %>" style="height: 50px;width:50px;" src="/<%= i %>.png"> 
                 <% } %>
               
