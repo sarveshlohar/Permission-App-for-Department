@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Permission</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <% include ../partials/studentheader %>
+    </header>
+    <h3 class="jumbotron text-center" >Welcome <b><%=user %></b></h3>
+
+    <div class="container" style="width: 300px;text-align: center;">
+        <h5 class="lead">Select Faculty to Send Message</h5>
+        <form action="/student/message/message" method="POST">
+                
+                <% names.forEach((item)=>{%>
+                    <button class="btn btn-link" type="submit" name="faculty" value=<%=item[1]%>> <%=item[0]%></button><br><hr>
+                <%});%>
+        </form>
+        
+    </div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+</html>

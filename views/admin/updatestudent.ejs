@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Permission</title>
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/login.css">
+    <link rel="icon" class="fas fa-cloud"/>
+</head>
+<body>
+    <header>
+        <% include ../partials/adminheader %>
+    </header>
+    <h3 class="jumbotron text-center" >Welcome <b><%=user %></b></h3>
+    <div class="login-form">
+        <h3 >Update Student</h3>
+        <form action="/updatestudent" method="POST">
+            <input type="text" name="updateuser" placeholder="Enter Username to be Updated" required>
+            <hr>
+            <input type="text" name="user" placeholder="Username" >
+            <div id="image-container">
+                <h4>Select New Password Images</h4>   
+                <% for (var i =1; i <=20;  i++ ) { %>
+                   <img onclick='add("<%= i %>")' nameid="<%= i %>" style="height: 50px;width:50px;" src="/<%= i %>.png"> 
+                <% } %> 
+            </div>
+            <input type="hidden" id="pwd" name="pass" value=""/>
+            <br>
+            <input type="text" name="fname" placeholder="Firstname" >
+            <input type="text" name="lname" placeholder="Lastname" >
+            <input type="text" name="prn" placeholder="PRN" >
+            <select class="form-control" name="class" required>
+                <option value=""> Class </option>
+                    <option value="FY"> First Year</option>
+                    <option value="SY"> Second Year</option>
+                    <option value="TY">Third Year</option>
+                    <option value="Final"> Final Year</option>
+                </select><br>
+            <select class="form-control" name="dept" required>
+                <option value=""> Department </option>
+                    <option value="CSE"> CSE</option>
+                    <option value="IT"> IT</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Electrical"> Electrical</option>
+                    <option value="Mech"> Mechanical</option>
+                    <option value="Civil"> Civil</option>
+                </select><br>
+            <input type="submit">
+            </form>
+    
+        </div>
+        <hr>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    <script>
+        var gpwd_set = new Set();
+
+        function add(i) {
+            var res = i.toString();
+            if (gpwd_set.has(res)) {
+                console.log('true');
+                gpwd_set.delete(res);
+            } else {
+                gpwd_set.add(res);
+            }
+
+            document.getElementById("pwd").setAttribute("value",Array.from(gpwd_set));
+        }
+    </script>
+</body>
+</html>

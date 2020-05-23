@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Permission</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+        
+        .container {
+          border: 2px solid #dedede;
+          background-color: #bbb8b8;
+          border-radius: 5px;
+          
+        }
+        
+        .darker {
+          border-color: #ccc;
+          background-color: rgb(231, 231, 231);
+        }
+        .lighter{
+            border-color: #ccc;
+          background-color: rgb(255, 255, 255);
+        }
+        
+        .container::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        .container img {
+          float: left;
+          max-width: 60px;
+          width: 100%;
+          margin-right: 20px;
+          border-radius: 50%;
+        }
+        
+        .container img.right {
+          float: right;
+          margin-left: 20px;
+          margin-right:0;
+        }
+        
+        .time-right {
+          float: right;
+          color: #aaa;
+        }
+        
+        .time-left {
+          float: left;
+          color: #999;
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <% include ../partials/facultyheader %>
+    </header>
+    <h3 class="jumbotron text-center" >Welcome <b><%=user %></b></h3>
+
+    <div class="container" style="width: 700px;text-align: center;">
+        <h5 class="lead">Chat Messages</h5>
+        <% message.forEach((item)=>{%>
+            <% if(item.reciever==reciever){ %>
+                    
+                <div class="container lighter" style="width:650px">
+                    <!-- <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;"> -->      
+                    <b><p style="float: right;"><%=sender%></p></b><hr>
+                <p><%=item.message%></p>
+                  </div>
+                <% } else{ %>
+            <div class="container darker" style="width:650px">
+                <!-- <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;"> -->
+                
+                <b><p style="float: left;"><%=reciever%></p></b><hr>
+                <p><%=item.message%></p>
+            </div>
+          <% } %>
+          <%});%>
+        <form action="/student/message/addmessage" method="POST">
+            <input type="hidden" name="faculty" value=<%=reciever%>>
+            <input type="hidden" name="sender" value=<%=sender%>>
+            <input type="hidden" name="reciever" value=<%=reciever%>>
+            <textarea class="form-control" name="msg"></textarea>
+            <button class="btn">Send</button>
+        </form>
+        
+    </div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+</html>

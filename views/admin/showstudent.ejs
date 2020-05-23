@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Permission</title>
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <link rel="icon" class="fas fa-cloud"/>
+</head>
+<body>
+    <header>
+        <% include ../partials/adminheader %>
+    </header>
+    <h3 class="jumbotron text-center" >Welcome <b><%=user %></b></h3>
+    <div class="container" style="width: 600px;height: 400px;text-align: center;">
+      <h4> Student Data</h4>
+        <table  class="table table-hover">
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Prn</th>
+              <th>Class</th>
+              <th>Department</th>
+            </tr>
+          
+            <% for (var i = 0; i < data.length;  i++) { %>
+              <tr>
+                <td><%= data[i].firstname %></td>
+                <td><%= data[i].lastname %></td>
+                <td><%= data[i].username %></td>
+                <td><%= data[i].password %></td>
+                <td><%= data[i].prn %></td>
+                <td><%= data[i].class %></td>
+                <td><%= data[i].department %></td>
+              </tr>    
+             <% } %>
+        </table>
+            
+    </div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+</html>

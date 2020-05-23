@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Permission</title>
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <style>.file {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+    }</style>
+</head>
+<body>
+    <header>
+        <% include ../partials/studentheader %>
+    </header>
+    <h3 class="jumbotron text-center" >Welcome <b><%=user %></b></h3>
+    <div class="container" style="width: 300px;height: 400px;text-align: center;">
+        <h5 class="lead">Permission for Event</h5>
+            <form action="/student/permission/fileupload" enctype="multipart/form-data" method="POST">
+                <div class="form-group">
+                    <label for="InputFile">File input</label>
+                    <input class="file" type="file" id="InputFile" name="myfile" required>
+                  </div>
+                  <label>Select Faculty</label>
+                  <select class="form-control" name="select" required>
+                    <option value=""> Select </option>
+                    <% names.forEach((item)=>{%>
+                        <option value=<%=item[1]%> > <%=item[0]%></option>
+                    <%});%>
+    
+                  </select><br>
+                  <button type="submit" class="btn btn-primary">Submit</button> 
+            </form>
+    </div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+</html>

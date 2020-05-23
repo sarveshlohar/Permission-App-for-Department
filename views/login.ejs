@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Permission</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+     <ul style="float:right">
+          <li><a href="http://www.walchandsangli.ac.in">Visit College Website</a></li>
+          <li><a href="http://112.133.242.241">WCE Moodle</a></li>
+      </ul> 
+    <div class="login-form">
+        <h1>App Permission</h1>
+        <h2>Login Form</h2>
+        <form action="auth" method="POST">
+            <input type="text" name="user" placeholder="Username" required>
+            <div id="image-container">
+                <h3>Select Password Images</h3>   
+                <% for (var i =1; i <=20;  i++ ) { %>
+                   <img onclick='add("<%= i %>")' nameid="<%= i %>" style="height: 50px;width:50px;" src="/<%= i %>.png"> 
+                <% } %>
+              
+            </div>
+            <input type="hidden" id="pwd" name="pass" value=""/>
+            <br>
+            <div class="radio">
+            <label class="container">Student
+                <input type="radio" checked="checked" name="type" value="student">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Faculty
+                <input type="radio" name="type" value="faculty">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Admin
+                <input type="radio" name="type" value="admin">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            
+             
+           
+            <input type="submit">
+            
+        </form>
+    </div>
+    <script>
+        var gpwd_set = new Set();
+
+        function add(i) {
+            var res = i.toString();
+            if (gpwd_set.has(res)) {
+                console.log('true');
+                gpwd_set.delete(res);
+            } else {
+                gpwd_set.add(res);
+            }
+
+            document.getElementById("pwd").setAttribute("value",Array.from(gpwd_set));
+        }
+    </script>
+</body>
+</html>

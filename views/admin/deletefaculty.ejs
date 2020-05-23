@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Permission</title>
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/login.css">
+    <link rel="icon" class="fas fa-cloud"/>
+</head>
+<body>
+    <header>
+        <% include ../partials/adminheader %>
+    </header>
+    <h3 class="jumbotron text-center" >Welcome <b><%=user %></b></h3>
+      <div class="login-form">
+        <h4 style="text-align: center; ;">Enter Details</h4>
+        <form action="/deletefaculty" method="POST">
+           
+            <input type="text" name="fname" placeholder="Firstname" required>
+            <input type="text" name="lname" placeholder="Lastname" required>
+            <select class="form-control" name="dept" required>
+                <option value=""> Department </option>
+                    <option value="CSE"> CSE</option>
+                    <option value="IT"> IT</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Electrical"> Electrical</option>
+                    <option value="Mech"> Mechanical</option>
+                    <option value="Civil"> Civil</option>
+                </select><br>
+            <input type="submit">
+            </form>
+    
+        </div>
+        <hr>
+       
+    
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Permission</title>
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <link rel="icon" class="fas fa-cloud"/>
+</head>
+<body>
+    <header>
+        <% include ../partials/adminheader %>
+    </header>
+    <h3 class="jumbotron text-center" >Welcome <b><%=user %></b></h3>
+    <div class="container" style="width: 400px;height: 400px;text-align: center;">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="student/add">Add Student</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="student/delete">Delete Student</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="student/update">Update Student</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="student/show">Show Student</a>
+              </li>
+          </ul>
+    </div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+</html>

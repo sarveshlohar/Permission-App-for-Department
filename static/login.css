@@ -1,0 +1,160 @@
+.btn {
+	border: none;
+	background-color: rgb(123, 140, 194);
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+	margin: 4px 2px;
+	display: inline-block;
+}
+.success:hover {
+background-color: rgb(83, 124, 179);
+color: rgb(255, 255, 255);
+}
+.login-form {
+	width: 300px;
+	margin: 0 auto;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+.login-form h1,h2,h3,h4{
+	text-align: center;
+	color: #4d4d4d;
+	
+	padding: 20px 0 20px 0;
+}
+.login-form input[type="password"],
+.login-form input[type="text"] {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #dddddd;
+	margin-bottom: 15px;
+	box-sizing:border-box;
+}
+.login-form input[type="submit"] {
+	width: 100%;
+	padding: 15px;
+	background-color: #535b63;
+	border: 0;
+	box-sizing: border-box;
+	cursor: pointer;
+	font-weight: bold;
+	color: #ffffff;
+}
+label.cameraButton {
+	display: inline-block;
+	margin: 1em 0;
+
+	/* Styles to make it look like a button */
+	padding: 0.5em;
+	border: 2px solid #666;
+	border-color: #EEE #CCC #CCC #EEE;
+	background-color: #DDD;
+	}
+
+	/* Look like a clicked/depressed button */
+	label.cameraButton:active {
+	border-color: #CCC #EEE #EEE #CCC;
+	}
+
+	/* This is the part that actually hides the 'Choose file' text box for camera inputs */
+	label.cameraButton input[accept*="camera"] {
+	display: none;
+	}
+	.container {
+		display: block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 20px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	
+	  }
+	  
+	  /* Hide the browser's default radio button */
+	  .container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+	  }
+	  
+	  /* Create a custom radio button */
+	  .checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: #eee;
+		border-radius: 100%;
+	  }
+	  
+	  /* On mouse-over, add a grey background color */
+	  .container:hover input ~ .checkmark {
+		background-color: #ccc;
+	  }
+	  
+	  /* When the radio button is checked, add a blue background */
+	  .container input:checked ~ .checkmark {
+		background-color: #2196F3;
+	  }
+	  
+	  /* Create the indicator (the dot/circle - hidden when not checked) */
+	  .checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	  }
+	  
+	  /* Show the indicator (dot/circle) when checked */
+	  .container input:checked ~ .checkmark:after {
+		display: block;
+	  }
+	  
+	  /* Style the indicator (dot/circle) */
+	  .container .checkmark:after {
+		   top: 9px;
+		  left: 9px;
+		  width: 8px;
+		  height: 8px;
+		  border-radius: 50%;
+		  background: white;
+	  }
+	  .radio{
+		  margin-left: 100px;
+		  
+	  }
+	  ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: rgb(255, 255, 255);
+	  }
+	  
+	  li {
+		float: left;
+		font-family: Georgia, 'Times New Roman', Times, serif;
+		font-weight: bold;
+	  }
+	  
+	  li a {
+		display: block;
+		color: rgb(77, 59, 59);
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	  }
+	  
+	  li a:hover:not(.active) {
+		background-color: rgb(221, 216, 216);
+	  }
+	  
+	/* body{
+		background-image: url("wce.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+	} */

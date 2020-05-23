@@ -1,0 +1,11 @@
+img{
+    height:300px;
+    width:300px;
+}
+.invalid{
+    text-align: center;
+    color: #4d4d4d;
+}
+p{
+    font-size: 30px;
+}
