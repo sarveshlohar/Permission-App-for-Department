@@ -12,7 +12,7 @@ App uses ExpressJS framework and some libraries which can be seen in <b>"package
 
 
 <h3>Steps to run the app</h3>
-1. Clone the repository 
+1. Clone the repository <br>
 2. Install NodeJS and MongoDB <br>
 3. Install node package manager npm <br>
 4. Open cmd type <b>"npm install"</b>. It will install all the dependencies for the application.<br>
